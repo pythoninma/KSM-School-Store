@@ -1,0 +1,44 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'college:allStreamDept' %}">Home</a>
+        </li>
+        <li class="nav-item">
+               <a class="nav-link" href="{% url 'college:register' %}">Register</a>
+             </li>
+        <li class="nav-item dropdown {% if 'college' in request.path %} active {% endif %} ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Departments
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'college:allStreamDept' %}"></a></li>
+               {% for dept in links %}
+            <li><a class="dropdown-item" href="{{dept.get_url}}">{{dept.name}}</a></li>
+
+
+               {% endfor %}
+
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+    <form >
+
+   <a class="btn btn-secondary" href="{% url 'college:login' %}">Login</a>
+
+    </form>
+  </div>
+</nav>
+
+

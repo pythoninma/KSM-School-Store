@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if department %}
+       {{department.description|truncatewords:155}}
+    {% else %}
+       Welcome to KSM College Store where you can buy different items...
+    {% endif %}
+{% endblock %}
+{% block title %}
+{% if department %}
+       {{department.name}} - KSM Store
+    {% else %}
+      See our New Collections -  KSM Store
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div>
+<img class="my_image my_image_padding" src="{% static 'img/banner1.png' %}" alt="our products" width="1300px" height="550px">
+</div>
+<br>
+<div>
+    <h1 class="text-center my_title">About Us</h1>
+    <p class="text-justify"> KSM Store is an initiative of the Education Services Organisation, which has over 10 years of end-to-end experience in fulfilling school supplies, study material and uniform related requirements of students and schools. KSM Store is currently expanding its operations pan-India with a thrust on providing study materials online and reaching wider audiences. Find fun and colourful school bags, lunch boxes, water bottles, notebooks, doodle boards, art supplies and school accessories and stationary at KSM Store.</p>
+</div>
+
+
+
+{% endblock %}
